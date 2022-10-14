@@ -33,25 +33,19 @@ sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 ```
 ### Download nexus software and extract it (unzip).
 ```sh
-sudo wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz 
-sudo tar -zxvf nexus-3.15.2-01-unix.tar.gz
-sudo mv /opt/nexus-3.15.2-01 /opt/nexus
+
 ```
 
 ## Grant permissions for nexus user to start and manage nexus service
 ```sh
 # Change the owner and group permissions to /opt/nexus and /opt/sonatype-work directories.
-sudo chown -R nexus:nexus /opt/nexus
-sudo chown -R nexus:nexus /opt/sonatype-work
-sudo chmod -R 775 /opt/nexus
-sudo chmod -R 775 /opt/sonatype-work
+ls
 ```
 ##  Open /opt/nexus/bin/nexus.rc file and  uncomment run_as_user parameter and set as nexus user.
 ## # change from #run_as_user="" to [ run_as_user="nexus" ]
 
 ```sh
-echo  'run_as_user="nexus" ' > /opt/nexus/bin/nexus.rc
-```
+echo  'run_as_user="nexus" ' > /opt/nexus/bin/nexus.rc```
 
 ##  CONFIGURE NEXUS TO RUN AS A SERVICE 
 ```sh
